@@ -1,0 +1,9 @@
+/* pages/borrow/index.wxss */
+.btn_area {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.btn_area button {
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+.book {
+  float:right;
+  height:20px;
+  line-height: 20px;
+  margin-top:5px;
+  background-color: #e55153;
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: #fff;
+  font-size: .8em;
+  width: 55px;
+}
+
+page {
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.book_pic {
+  /* margin-right: 15px; */
+  vertical-align: middle; 
+  width:50px; height:66px;
+}
+.weui-media-box__hd_in-appmsg .subtitle {
+  overflow:auto;
+  text-overflow:unset;
+}

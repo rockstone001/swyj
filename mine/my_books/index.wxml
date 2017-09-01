@@ -1,0 +1,42 @@
+<view class="page">
+  <include src="/include/return.wxml" />
+  <scroll-view bindscrolltolower="loadMore" scroll-y style="height:{{totalHeight}}px" >
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view data-id="{{item.id}}" bindtap="listenerButton" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{books}}" wx:key="item.id">
+          <template is="book_item" data="{{item}}"/>
+        </view>  
+      </view>
+    </view>
+    <view class="weui-loadmore" hidden="{{isLoading == 0}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" hidden="{{isLoading == 1}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{tips}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<template name="book_item">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image wx:if="{{item.pic == ''}}" class="weui-media-box__thumb book_pic" src="../images/book.png"></image>
+      <image wx:else class="weui-media-box__thumb book_pic" src="{{item.pic}}"></image>
+      <image src="/images/tj.png" class="tj" wx:if="{{item.if_recommend == 1}}"></image>
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title one-line">{{item.title}}</view>
+      <view class="weui-media-box__desc one-line subtitle">{{item.publisher}}</view>
+      <view class="weui-media-box__desc one-line subtitle">来源 : {{item.from_type == 0 ? '自己上传' : '他人赠予'}}</view>
+    </view>
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="margin-right: 0em;">
+      <view class="weui-media-box__desc subtitle text-right state" hidden="{{item.state != 1 ? true : false}}" >书架上</view>
+      <view class="weui-media-box__desc subtitle text-right borrower" hidden="{{item.state != 2 ? true : false}}" style="{{item.state == 2 ? 'display:inline-block' : ''}}">外借:{{item.borrower}}(<label style="{{item.remain_days <= 0 ? 'color: red' : ''}}">{{item.remain_days}}天</label>)</view>
+      <view class="weui-media-box__desc subtitle text-right days" hidden="{{item.book_user == '' ? true : false}}" >预约:{{item.book_user}}</view>
+
+    </view>
+</template>
+
+<modal hidden="{{hiddenmodalput}}" title="请输入外借天数" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='number' placeholder="请输入外借天数" bindinput="borrowDaysInput" value="{{borrow_days}}"/>  
+</modal> 

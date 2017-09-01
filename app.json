@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "index/index",
+    "borrow/index",
+    "mine/index",
+    "index/book",
+    "borrow/borrowed",
+    "mine/my_books/my_book",
+    "mine/my_books/index",
+    "mine/my_booked_books/index",
+    "mine/my_borrowed_books/index",
+    "mine/my_readed_books/index",
+    "mine/publish/index",
+    "mine/publish/step2",
+    "mine/user_info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#373b3e",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#56abe4",
+    "backgroundColor": "#f7f8fb",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "index/index",
+        "text": "图书馆",
+        "iconPath": "images/cat_menu_01.png",
+        "selectedIconPath": "images/cat_menu_on_01.png"
+      },
+      {
+        "pagePath": "borrow/index",
+        "text": "借阅",
+        "iconPath": "images/cat_menu_02.png",
+        "selectedIconPath": "images/cat_menu_on_02.png"
+      },
+      {
+        "pagePath": "mine/index",
+        "text": "我的",
+        "iconPath": "images/cat_menu_03.png",
+        "selectedIconPath": "images/cat_menu_on_03.png"
+      }
+    ]
+  }
+}

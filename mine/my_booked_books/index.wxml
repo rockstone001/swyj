@@ -1,0 +1,39 @@
+<view class="page">
+  <include src="/include/return.wxml" />
+  <scroll-view bindscrolltolower="loadMore" scroll-y style="height:{{totalHeight}}px" >
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view data-id="{{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{books}}" wx:key="item.id">
+          <template is="book_item" data="{{item}}"/>
+        </view>  
+      </view>
+    </view>
+    <view class="weui-loadmore" hidden="{{isLoading == 0}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" hidden="{{isLoading == 1}}">
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line">{{tips}}</view>
+    </view>
+  </scroll-view>
+</view>
+
+<template name="book_item">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+      <image wx:if="{{item.pic == ''}}" class="weui-media-box__thumb book_pic" src="/images/book.png"></image>
+      <image wx:else class="weui-media-box__thumb book_pic" src="{{item.pic}}"></image>
+      <image src="/images/tj.png" class="tj" wx:if="{{item.if_recommend == 1}}"></image>
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title one-line">{{item.title}}</view>
+      <view class="weui-media-box__desc one-line subtitle">{{item.publisher}}</view>
+      <view class="weui-media-box__desc one-line subtitle">来源 : {{item.nickname}}</view>
+    </view>
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="margin-right: 0em;">
+      <view class="weui-media-box__desc subtitle text-right state" hidden="{{item.state == 1 ? false : true}}" >剩余{{item.wait_days}}天</view>
+      <view class="weui-media-box__desc subtitle text-right state" wx:if="{{item.state == 2}}" >成功借阅</view>
+      <view class="weui-media-box__desc book" data-id="{{item.id}}" bindtap="book" wx:elif="{{item.state == 1}}">取消预约</view>
+      <view class="weui-media-box__desc subtitle text-right state" wx:elif="{{item.state == 0}}">已取消</view>
+      <view class="weui-media-box__desc subtitle text-right state" wx:else>拒绝预约</view>
+    </view>
+</template>

@@ -1,0 +1,87 @@
+.top {
+  height: 70px;
+  position: relative;
+}
+.top .avatar {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  float: left;
+}
+.top .avatar image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.top .person {
+  float: left;
+  height: 50px;
+  margin: 10px 10px 10px 0px;
+}
+.top .person .author {
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 25px;
+}
+.top .person .borrower {
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 25px;
+  font-size: .9em;
+  color: #a9aaab;
+}
+.top .book {
+  float:right;
+  margin-right:10px;
+  height:25px;
+  line-height: 25px;
+  margin-top:15px;
+  background-color: #e55153;
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: #fff;
+  font-size: .9em;
+}
+
+.pic {
+  text-align: center;
+  margin-top: 20px;
+}
+.pic image {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+page {
+  background-color: #fff;
+}
+
+.book_info .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  text-align: center;
+  margin: 15px;
+}
+.row {
+  font-size: .9em;
+}
+.row .left {
+  margin-right: 5px;
+}
+.intro .title2 {
+  display: inline-block;
+  text-align: left;
+  font-size: .9em;
+  margin-top: 20px;
+}
+.intro .content {
+  font-size: .9em;
+  line-height: 22px;
+  margin-bottom: 20px;
+  text-indent: 2em;
+}

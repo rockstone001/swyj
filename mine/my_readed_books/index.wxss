@@ -1,0 +1,14 @@
+.day {
+  font-size: 1.4em;
+  display: inline-block;
+  color: #000001;
+}
+.month {
+  font-size: 1em;
+  display: inline-block;
+  color: #000001;
+  padding-left: 5px;
+}
+.weui-media-box__hd_in-appmsg image {
+  width: 50px;
+}

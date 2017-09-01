@@ -1,0 +1,15 @@
+<view class="page">
+  <include src="/include/return.wxml" />
+  <view class="first" bindtap="scanEnter">
+    <view class="label">第一步</view>
+    <image src="../../images/scan.png" style="width:180px;height:120px;"></image>
+    <view class="cells btn_area">
+      <button type="primary" size="default" formType="submit"> 扫描图书条形码获取图书信息 </button>
+    </view>
+  </view>
+  <view class="second">
+    <view class="label">第二步</view>
+    <image src="../../images/qrcode.jpg" style="width:180px;height:120px;"></image>
+    <view class="label2">二维码从管理员处获取，此内容为必须</view>
+  </view>
+</view>

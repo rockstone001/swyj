@@ -1,0 +1,213 @@
+<view class="page">
+  <include src="/include/return.wxml" />
+  <view class="page__bd">
+    <form bindsubmit="save" class="form-no-class">
+      <view class="weui-cells__title"></view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">图片</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input type="text" class="input" name="id" value="{{id}}" style="display:none"/>
+            <input type="text" class="input" name="pic" value="{{pic}}" style="display:none"/>
+
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__input-box" style="margin-top: 9px;" wx:if="{{pic == ''}}">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+              <view wx:else class="weui-uploader__file" bindtap="chooseImage" style="margin-top: 9px;">
+                <image class="weui-uploader__img" src="{{pic}}" mode="aspectFill"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">分类</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker name="type" bindchange="bindPickerChange" value="{{type}}" range="{{types}}">
+              <view class="weui-select weui-select_in-select-after">{{types[type]}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">书名</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="title" class="weui-input" placeholder="请输入书名" value="{{title}}"/>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">副书名</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="subtitle" class="weui-input" placeholder="请输入副书名" value="{{subtitle}}"/>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">作者</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="author" class="weui-input" placeholder="请输入作者" value="{{author}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">摘要</view>
+            </view>
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="summary" placeholder="请输入摘要" value="{{summary}}" style="height: 6em" />
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">出版社</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="publisher" class="weui-input" placeholder="请输入出版社" value="{{publisher}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">出版地</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="pubplace" class="weui-input" placeholder="请输入出版地" value="{{pubplace}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">出版时间</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="pubdate" class="weui-input" placeholder="请输入出版时间" value="{{pubdate}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">页数</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="page" class="weui-input" placeholder="请输入页数" value="{{page}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">价格</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="price" class="weui-input" placeholder="请输入价格" value="{{price}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">装帧方式</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="binding" class="weui-input" placeholder="请输入装帧方式" value="{{binding}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">ISBN</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="isbn" class="weui-input" placeholder="请输入ISBN" value="{{isbn}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">ISBN 10位</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="isbn10" class="weui-input" placeholder="请输入ISBN 10位" value="{{isbn10}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">书名</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="title" class="weui-input" placeholder="请输入书名" value="{{title}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">主题词</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="keyword" class="weui-input" placeholder="请输入主题词" value="{{keyword}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">版次</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="edition" class="weui-input" placeholder="请输入版次" value="{{edition}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">印次</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="impression" class="weui-input" placeholder="请输入印次" value="{{impression}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">正文语种</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="language" class="weui-input" placeholder="请输入正文语种" value="{{language}}"/>
+            </view>
+        </view>
+        
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">开本</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="format" class="weui-input" placeholder="请输入开本" value="{{format}}"/>
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">中图法分类</view>
+            </view>
+            <view class="weui-cell__bd">
+              <input name="class" class="weui-input" placeholder="请输入中图法分类" value="{{class}}"/>
+            </view>
+        </view>  
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">更新图书</button>
+      </view>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<view class="page">
+  <include src="/include/return.wxml" />
+  <view class="weui-panel weui-panel_access top" style="margin-top: 0px;">
+    <view class="avatar">
+      <image src="{{avatar}}"></image>
+    </view>
+    <view class="person">
+      <view class="author">{{nickname}} 分享</view>
+      <view class="borrower" hidden="{{borrower == '' ? true : false}}">{{borrower}} 在读 ({{remain_days}})</view>
+    </view>
+    <view class="book" bindtap="book">{{is_booked?'取消预约':'预约'}}</view>
+  </view>
+  <view class="book_info">
+    <view class="pic">
+      <image wx:if="{{pic!=''}}" src="{{pic}}" style="width: {{winWidth * 0.6}}px"></image>
+      <image wx:else src="/images/book.png" style="width: {{winWidth * 0.6}}px"></image>
+    </view>
+    <view class="row title" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label>{{title}}</label>
+    </view>
+    <view class="row" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label class="left">作者:</label>
+      <label class="right">{{author}}</label>
+    </view>
+    <view class="row" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label class="left">出版社:</label>
+      <label class="right">{{publisher}}</label>
+    </view>
+    <view class="row" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label class="left">出版日期:</label>
+      <label class="right">{{pubdate}}</label>
+    </view>
+    <view class="row" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label class="left">页数:</label>
+      <label class="right">{{page}}</label>
+    </view>
+    <view class="row" style="margin-left: {{winWidth * 0.2}}px; width: {{winWidth * 0.6}}px">
+      <label class="left">ISBN:</label>
+      <label class="right">{{isbn}}</label>
+    </view>
+    <view class="intro" style="width: {{winWidth - 20}}px; margin-left: 10px;">
+      <view class="title2">内容摘要:</view>
+      <view class="content">{{summary}}</view>
+    </view>
+  </view>
+  <view class="" style="height: 1px;"></view>
+</view>

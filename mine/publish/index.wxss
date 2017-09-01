@@ -1,0 +1,23 @@
+/* publish_book.wxss */
+.first, .second {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+.first .label, .second .label {
+  text-align: center;
+  font-size: 1.3em;
+  width: 100%;
+  height: 2em;
+}
+.label2 {
+  font-size: .8em;
+  display: inline-block;
+  margin-top: 10px;
+}
+.first .btn_area {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
